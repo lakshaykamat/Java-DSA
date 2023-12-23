@@ -10,4 +10,16 @@ public class LeetCode {
         }
         return newArr;
     }
+<<<<<<< refs/remotes/origin/master
+=======
+
+    public static int[] buildArray(int[] nums) {
+        //https://leetcode.com/problems/build-array-from-permutation/
+        int[] ans =  new int[nums.length];
+        for(int i=0;i<nums.length;i++){
+            ans[i] = nums[nums[i]];
+        }
+        return ans;
+    }
+>>>>>>> concatenation of array
 }
