@@ -10,8 +10,6 @@ public class LeetCode {
         }
         return newArr;
     }
-<<<<<<< refs/remotes/origin/master
-=======
 
     public static int[] buildArray(int[] nums) {
         //https://leetcode.com/problems/build-array-from-permutation/
@@ -21,9 +19,6 @@ public class LeetCode {
         }
         return ans;
     }
-<<<<<<< refs/remotes/origin/master
->>>>>>> concatenation of array
-=======
     public static int[] runningSum(int[] nums) {
         //https://leetcode.com/problems/running-sum-of-1d-array/
         int[] ans = new int[nums.length];
@@ -77,5 +72,4 @@ public class LeetCode {
         }
         return countPair;
     }
->>>>>>> new array question solved
 }
