@@ -1,5 +1,5 @@
 # Data Structures and Algorithms (DSA) with Java
-
+Leet Code Profile: https://leetcode.com/lakshaykamat/
 Welcome to my repository dedicated to Data Structures and Algorithms practice using Java. Here, you'll find solutions to various LeetCode questions and comprehensive documentation for understanding DSA concepts.
 
 ## LeetCode Solutions
