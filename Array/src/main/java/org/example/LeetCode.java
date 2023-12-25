@@ -1,6 +1,9 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class LeetCode {
+
     public static int[] getConcatenation(int[] nums) {
         int length = nums.length;
         int[] newArr = new int[length * 2];
@@ -56,7 +59,7 @@ public class LeetCode {
     }
 
     public static int[] shuffle(int[] nums,int n) {
-        //https://leetcode.com/problems/shuffle-the-array/
+        //TODO https://leetcode.com/problems/shuffle-the-array/
         //TODO Under progress
         int[] newArr = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
@@ -94,5 +97,51 @@ public class LeetCode {
     public static boolean checkIfPangram(String sentence) {
         //TODO Under progress
         return true;
+    }
+    public static int[][] flipAndInvertImage(int[][] image) {
+        //https://leetcode.com/problems/flipping-an-image/
+        int[][] invertedArray = new int[image.length][image[0].length];
+
+        //Flipping the array
+        for(int i=0;i<image.length;i++){
+            for(int j=image.length-1;j>=0;j--){
+                /*
+                    imageFlip[0][(3-1)- 2] = image[0][2]
+                    imageFlip[0][(3-1)- 1] = image[0][1]
+                    imageFlip[0][(3-1)- 0] = image[0][0]
+                 */
+               invertedArray[i][image.length-1 - j] = image[i][j];
+            }
+        }
+
+        //Inverting the array
+        for(int i=0;i<invertedArray.length;i++){
+            for(int j=0;j<invertedArray.length;j++){
+                if(invertedArray[i][j] == 1) invertedArray[i][j] = 0;
+                else if(invertedArray[i][j] == 0) invertedArray[i][j] = 1;
+            }
+        }
+
+        return invertedArray;
+    }
+    public static int[][] flipAndInvertImage2(int[][] image) {
+        //https://leetcode.com/problems/flipping-an-image/
+        int rows = image.length;
+        int cols = image[0].length;
+        int[][] invertedArray = new int[rows][cols];
+
+        //Flipping the array
+        for(int i=0;i<image.length;i++){
+            for(int j=image.length-1;j>=0;j--){
+                /*
+                    imageFlip[0][(3-1)- 2] = image[0][2]
+                    imageFlip[0][(3-1)- 1] = image[0][1]
+                    imageFlip[0][(3-1)- 0] = image[0][0]
+                 */
+                invertedArray[i][image.length-1 - j] = (image[i][j] == 1) ? 0 : 1;
+            }
+        }
+
+        return invertedArray;
     }
 }
