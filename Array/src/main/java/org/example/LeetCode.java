@@ -70,6 +70,18 @@ public class LeetCode {
         return newArr;
     }
 
+    public static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        List<Boolean> ans = new ArrayList<>();
+        int max = Array.maximumValueIndex(candies);
+        for (int candy : candies) {
+            if (candy + extraCandies >= candies[max]) {
+                ans.add(true);
+            } else {
+                ans.add(false);
+            }
+        }
+        return ans;
+    }
     public static int numIdenticalPairs(int[] nums) {
         //https://leetcode.com/problems/number-of-good-pairs/description/
         int countPair = 0;
