@@ -278,6 +278,42 @@ public class LeetCode {
         }
         return newMatrix;
     }
+    public static List<Integer> addToArrayForm(int[] num, int k) {
+        //Link: https://leetcode.com/problems/add-to-array-form-of-integer
+
+        // Convert the integer array 'num' into a string representation
+        StringBuilder numAsString = new StringBuilder();
+        for (int digit : num) {
+            numAsString.append(digit);
+        }
+
+        // Convert the string representation to a BigInteger
+        BigInteger bigNum = new BigInteger(numAsString.toString());
+
+        // Convert 'k' to a BigInteger
+        BigInteger bigK = BigInteger.valueOf(k);
+
+        // Add 'bigK' to 'bigNum' to get the sum
+        BigInteger sum = bigNum.add(bigK);
+
+        // Convert the sum back to a string and then to a List<Integer>
+        return bigIntegerToIntegerList(sum);
+    }
+
+    public static List<Integer> bigIntegerToIntegerList(BigInteger number) {
+        List<Integer> resultList = new ArrayList<>();
+
+        // Convert the BigInteger to a string
+        String numStr = number.toString();
+
+        // Add each character (digit) from the string to the resultList as integers
+        for (char c : numStr.toCharArray()) {
+            int digit = Character.getNumericValue(c);
+            resultList.add(digit);
+        }
+
+        return resultList;
+    }
                 }
             }
 }
