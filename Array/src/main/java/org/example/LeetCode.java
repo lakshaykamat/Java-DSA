@@ -112,6 +112,17 @@ public class LeetCode {
         //TODO Under progress
         return true;
     }
+    public static int largestAltitude(int[] gain) {
+        // TODO https://leetcode.com/problems/find-the-highest-altitude/
+        int currentMax = 0;
+        int max = 0;
+        for (int j : gain) {
+            currentMax += j;
+            max = Math.max(max, currentMax);
+        }
+        return max;
+    }
+
     public static int[][] flipAndInvertImage(int[][] image) {
         //https://leetcode.com/problems/flipping-an-image/
         int[][] invertedArray = new int[image.length][image[0].length];
