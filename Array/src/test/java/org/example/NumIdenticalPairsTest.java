@@ -14,4 +14,6 @@ class NumIdenticalPairsTest {
     void Test2(){
         assertEquals(6,LeetCode.numIdenticalPairs(new int[]{1,1,1,1}));
     }
+    @Test
+    void Test(){ assertEquals(0,LeetCode.numIdenticalPairs(new int[]{1,2,3}));}
 }
