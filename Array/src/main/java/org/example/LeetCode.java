@@ -1,12 +1,12 @@
 package org.example;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class LeetCode {
 
-    public static int[] getConcatenation(int[] nums) {
+    static int[] getConcatenation(int[] nums) {
         int length = nums.length;
         int[] newArr = new int[length * 2];
         for (int i = 0; i < length; i++) {
@@ -16,7 +16,7 @@ public class LeetCode {
         return newArr;
     }
 
-    public static int[] buildArray(int[] nums) {
+    static int[] buildArray(int[] nums) {
         // https://leetcode.com/problems/build-array-from-permutation/
         int[] ans = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
@@ -25,7 +25,7 @@ public class LeetCode {
         return ans;
     }
 
-    public static int[] runningSum(int[] nums) {
+    static int[] runningSum(int[] nums) {
         // https://leetcode.com/problems/running-sum-of-1d-array/
         int[] ans = new int[nums.length];
         for (int i = 1; i < nums.length; i++) {
@@ -34,7 +34,7 @@ public class LeetCode {
         return nums;
     }
 
-    public static int[] runningSum2(int[] nums) {
+    static int[] runningSum2(int[] nums) {
         // https://leetcode.com/problems/running-sum-of-1d-array/
         int[] ans = new int[nums.length];
         if (nums.length == 0) {
@@ -47,7 +47,7 @@ public class LeetCode {
         return ans;
     }
 
-    public static int maximumWealth(int[][] accounts) {
+    static int maximumWealth(int[][] accounts) {
         // https://leetcode.com/problems/richest-customer-wealth/
         int maxWeath = 0;
         for (int i = 0; i < accounts.length; i++) {
@@ -60,17 +60,17 @@ public class LeetCode {
         return maxWeath;
     }
 
-    public static int[] shuffle(int[] nums,int n) {
-        //TODO https://leetcode.com/problems/shuffle-the-array/
-        //TODO Under progress
-        int[] newArr = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-
+    static int[] shuffle(int[] nums, int n) {
+        //TODO review Link: https://leetcode.com/problems/shuffle-the-array/
+        int[] ans = new int[2 * n];
+        for (int i = 0; i < n; i++) {
+            ans[2 * i] = nums[i];
+            ans[2 * i + 1] = nums[i + n];
         }
-        return newArr;
+        return ans;
     }
 
-    public static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+    static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
         List<Boolean> ans = new ArrayList<>();
         int max = Array.maximumValueIndex(candies);
         for (int candy : candies) {
@@ -82,7 +82,8 @@ public class LeetCode {
         }
         return ans;
     }
-    public static int numIdenticalPairs(int[] nums) {
+
+    static int numIdenticalPairs(int[] nums) {
         // https://leetcode.com/problems/number-of-good-pairs/description/
         int countPair = 0;
         for (int i = 0; i < nums.length - 1; i++) {
@@ -95,7 +96,7 @@ public class LeetCode {
         return countPair;
     }
 
-    public static int[] smallerNumbersThanCurrent(int[] nums) {
+    static int[] smallerNumbersThanCurrent(int[] nums) {
         // https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
         int[] ans = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
@@ -109,12 +110,41 @@ public class LeetCode {
         return ans;
     }
 
-    public static boolean checkIfPangram(String sentence) {
-        //TODO Under progress
+    static boolean checkIfPangram(String sentence) {
+        // https://leetcode.com/problems/check-if-the-sentence-is-pangram/
+        boolean[] arr = new boolean[26];
+        for (int i = 0; i < sentence.length(); i++) {
+            arr[sentence.charAt(i) - 'a'] = true;
+            System.out.println(arr[i]);
+        }
+        for (int i = 0; i < 26; i++) {
+            if (!arr[i]) {
+                return false;
+            }
+        }
         return true;
     }
 
-    public static int largestAltitude(int[] gain) {
+    static int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+        //https://leetcode.com/problems/count-items-matching-a-rule/
+        int ans = 0;
+        for (int i = 0; i < items.size(); i++) {
+            if (ruleKey.equals("color")) {
+                if (ruleValue.equals(items.get(i).get(1)))
+                    ans++;
+            } else if (ruleKey.equals("type")) {
+                if (ruleValue.equals(items.get(i).get(0)))
+                    ans++;
+            } else {
+                if (ruleValue.equals(items.get(i).get(2)))
+                    ans++;
+            }
+        }
+
+        return ans;
+    }
+
+    static int largestAltitude(int[] gain) {
         // TODO https://leetcode.com/problems/find-the-highest-altitude/
         int currentMax = 0;
         int max = 0;
@@ -125,7 +155,7 @@ public class LeetCode {
         return max;
     }
 
-    public static int[][] flipAndInvertImage(int[][] image) {
+    static int[][] flipAndInvertImage(int[][] image) {
         // https://leetcode.com/problems/flipping-an-image/
         int[][] invertedArray = new int[image.length][image[0].length];
 
@@ -154,7 +184,7 @@ public class LeetCode {
         return invertedArray;
     }
 
-    public static int[][] flipAndInvertImage2(int[][] image) {
+    static int[][] flipAndInvertImage2(int[][] image) {
         // https://leetcode.com/problems/flipping-an-image/
         int rows = image.length;
         int cols = image[0].length;
@@ -175,7 +205,7 @@ public class LeetCode {
         return invertedArray;
     }
 
-    public static int diagonalSum(int[][] mat) {
+    static int diagonalSum(int[][] mat) {
         // Initialize variables to store diagonal sums and matrix size
         int primaryDiagonal = 0;
         int row = mat.length;
@@ -267,7 +297,7 @@ public class LeetCode {
         return newMatrix;
     }
 
-    public static List<Integer> addToArrayForm(int[] num, int k) {
+    static List<Integer> addToArrayForm(int[] num, int k) {
         //Link: https://leetcode.com/problems/add-to-array-form-of-integer
 
         // Convert the integer array 'num' into a string representation
@@ -289,7 +319,7 @@ public class LeetCode {
         return bigIntegerToIntegerList(sum);
     }
 
-    public static List<Integer> bigIntegerToIntegerList(BigInteger number) {
+    static List<Integer> bigIntegerToIntegerList(BigInteger number) {
         List<Integer> resultList = new ArrayList<>();
 
         // Convert the BigInteger to a string
@@ -303,6 +333,44 @@ public class LeetCode {
 
         return resultList;
     }
-                }
+
+    static int[] twoSum(int[] nums, int target) {
+        //TODO Write test
+        int[] ans = new int[0];
+        for (int i = 1; i < nums.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                if (i == j)
+                    continue;
+                if (nums[i] + nums[j] == target)
+                    return new int[]{j, i};
             }
+        }
+        return ans;
+    }
+
+    static boolean findRotation(int[][] mat, int[][] target) {
+        //TODO: Write Test
+        for (int i = 0; i < 4; i++) {
+            if (Array.isMatrixEqual(mat, target)) {
+                return true;
+            }
+            Array.rotateMatrixClockwise(mat);
+        }
+        return false;
+    }
+
+    public static int[] sumZero(int n) {
+        //TODO Link: https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/
+        return new int[]{};
+    }
+    static int oddCells(int m, int n, int[][] indices) {
+        //TODO Write testLink: https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/
+        int[][] mat = new int[m][n];
+        for (int[] index : indices) {
+            Array.incrementRow(mat, index[0], 1);
+            Array.incrementCol(mat, index[1], 1);
+        }
+        return Array.countOddNumberInMatrix(mat);
+    }
+
 }
