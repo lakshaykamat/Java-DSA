@@ -17,7 +17,7 @@ public class LeetCode {
     }
 
     static int[] buildArray(int[] nums) {
-        // https://leetcode.com/problems/build-array-from-permutation/
+        // Link:https://leetcode.com/problems/build-array-from-permutation/
         int[] ans = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
             ans[i] = nums[nums[i]];
@@ -26,7 +26,7 @@ public class LeetCode {
     }
 
     static int[] runningSum(int[] nums) {
-        // https://leetcode.com/problems/running-sum-of-1d-array/
+        // Link:https://leetcode.com/problems/running-sum-of-1d-array/
         int[] ans = new int[nums.length];
         for (int i = 1; i < nums.length; i++) {
             nums[i] += nums[i - 1];
@@ -35,7 +35,7 @@ public class LeetCode {
     }
 
     static int[] runningSum2(int[] nums) {
-        // https://leetcode.com/problems/running-sum-of-1d-array/
+        // Link:https://leetcode.com/problems/running-sum-of-1d-array/
         int[] ans = new int[nums.length];
         if (nums.length == 0) {
             return ans;
@@ -48,7 +48,7 @@ public class LeetCode {
     }
 
     static int maximumWealth(int[][] accounts) {
-        // https://leetcode.com/problems/richest-customer-wealth/
+        // Link:https://leetcode.com/problems/richest-customer-wealth/
         int maxWeath = 0;
         for (int i = 0; i < accounts.length; i++) {
             int currentWealth = 0;
@@ -61,7 +61,7 @@ public class LeetCode {
     }
 
     static int[] shuffle(int[] nums, int n) {
-        //TODO review Link: https://leetcode.com/problems/shuffle-the-array/
+        //Link: https://leetcode.com/problems/shuffle-the-array/
         int[] ans = new int[2 * n];
         for (int i = 0; i < n; i++) {
             ans[2 * i] = nums[i];
@@ -84,7 +84,7 @@ public class LeetCode {
     }
 
     static int numIdenticalPairs(int[] nums) {
-        // https://leetcode.com/problems/number-of-good-pairs/description/
+        //Link: https://leetcode.com/problems/number-of-good-pairs/description/
         int countPair = 0;
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -97,7 +97,7 @@ public class LeetCode {
     }
 
     static int[] smallerNumbersThanCurrent(int[] nums) {
-        // https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+        // Link:https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
         int[] ans = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
             int count = 0;
@@ -111,7 +111,7 @@ public class LeetCode {
     }
 
     static boolean checkIfPangram(String sentence) {
-        // https://leetcode.com/problems/check-if-the-sentence-is-pangram/
+        //Link:https://leetcode.com/problems/check-if-the-sentence-is-pangram/
         boolean[] arr = new boolean[26];
         for (int i = 0; i < sentence.length(); i++) {
             arr[sentence.charAt(i) - 'a'] = true;
@@ -126,7 +126,7 @@ public class LeetCode {
     }
 
     static int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
-        //https://leetcode.com/problems/count-items-matching-a-rule/
+        //Link: https://leetcode.com/problems/count-items-matching-a-rule/
         int ans = 0;
         for (int i = 0; i < items.size(); i++) {
             if (ruleKey.equals("color")) {
@@ -145,7 +145,7 @@ public class LeetCode {
     }
 
     static int largestAltitude(int[] gain) {
-        // TODO https://leetcode.com/problems/find-the-highest-altitude/
+        //Link https://leetcode.com/problems/find-the-highest-altitude/
         int currentMax = 0;
         int max = 0;
         for (int j : gain) {
@@ -360,11 +360,13 @@ public class LeetCode {
     }
 
     public static int[] sumZero(int n) {
-        //TODO Link: https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/
+        //NOT-SOLVED
+        //Link: https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/
         return new int[]{};
     }
     static int oddCells(int m, int n, int[][] indices) {
-        //TODO Write testLink: https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/
+        //TODO  Write Test
+        //Link: https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/
         int[][] mat = new int[m][n];
         for (int[] index : indices) {
             Array.incrementRow(mat, index[0], 1);
